@@ -2,6 +2,8 @@ var express = require('express');
 var router = express.Router();
 var path = require('path');
 
+var app = express();
+
 router.get('/survey', function(req, res, next) {
   res.sendFile(path.join(__dirname, "../public/survey.html"));
 });
