@@ -3,16 +3,12 @@ var router = express.Router();
 var friends = require("../data/friends.js");
 var app = express();
 
-var names = friends.name;
-var photos = friends.photo;
-var scoreArr = friends.scores;
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
-app.get('/api/friends', function(req, res, next) {
-  res.send("respond with friends api");
-});
-
-app.post('/api/friends',function(req,res,next){
-  res.send("post to friends api data")
+router.get('/api/friends', function(req, res, next) {
+  console.log(friends)
+  res.json(friends);
 });
 
 app.post("/api/friends", function(req,res){
