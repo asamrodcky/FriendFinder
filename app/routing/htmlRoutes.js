@@ -12,9 +12,9 @@ router.get('/survey', function(req, res, next) {
   res.sendFile(path.join(__dirname, "../public/survey.html"));
 });
 
-router.get('/api/friends', function(req, res, next) {
-  return res.json(friends);
-});
+// router.get('/api/friends', function(req, res, next) {
+//   return res.json(friends);
+// });
 
 /* GET home page. W catch-all route */
 router.get('/*', function(req, res, next) {
